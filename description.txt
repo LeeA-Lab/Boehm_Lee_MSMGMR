@@ -1,0 +1,18 @@
+The structure array anm_struct contains the following fields:
+'anm' : animal identity
+delay_popvec: population vectors during the delay period (dimensions: # cluster x trials)
+goalArrival_popvec: population vectors at the goal (see methods, dimensions: # clusters x trials)
+bridge_popvec: population vectors on the bridge (dimensions: # clusters x trials)
+
+'Y_g': current goal, can be 1, 2, or 3, corresponds to the second dimension in delay_popvec and goal_Arrival_pop_vec 
+and the third dimension in the matrices in field 'delay'
+
+'Y_s': current start position, can be 1, 2, or 3 corresponds to the second dimension in delay_popvec 
+and the third dimension in the matrices in field 'delay'
+
+'Y_b': current start position, can be 1, 2, or 3 corresponds to the second dimension in bridge_popvec
+
+'delay': structure contains fields corresponding to spike counts at 100 ms binwidths and standardized counts of spikes at specific phases
+at different frequencies (2.5-5Hz, 5-12 Hz and 15-30 Hz)
+matrices in these fields have dimensions # clusters x time bins/phase bins x trials
+Each trial's goal is according to Y_g and each trial's start is according to Y_s, for the phase bin, the goals are according phaseclass
